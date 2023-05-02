@@ -12,7 +12,7 @@ part of geolocation;
 ///
 ///  * [GeolocationResultError], which contains details on why/what failed.
 class GeolocationResult {
-  GeolocationResult._(
+  GeolocationResult(
     this.isSuccessful,
     this.error,
   ) {
@@ -21,7 +21,7 @@ class GeolocationResult {
   }
 
   final bool isSuccessful;
-  final GeolocationResultError error;
+  final GeolocationResultError? error;
 
   String dataToString() {
     return "without additional data";
@@ -38,13 +38,13 @@ class GeolocationResult {
 }
 
 class GeolocationResultError {
-  GeolocationResultError._(
+  GeolocationResultError(
     this.type,
     this.message,
     this.additionalInfo,
   );
 
-  final GeolocationResultErrorType type;
+  final GeolocationResultErrorType? type;
   final String message;
   final dynamic additionalInfo;
 
@@ -63,7 +63,7 @@ class GeolocationResultError {
         return 'play services -> $additionalInfo';
       default:
         assert(false);
-        return null;
+        return "";
     }
   }
 }
@@ -77,7 +77,7 @@ enum GeolocationResultErrorType {
   playServicesUnavailable,
 }
 
-GeolocationResultErrorType _mapResultErrorTypeJson(String jsonValue) {
+GeolocationResultErrorType? _mapResultErrorTypeJson(String jsonValue) {
   switch (jsonValue) {
     case 'runtime':
       return GeolocationResultErrorType.runtime;

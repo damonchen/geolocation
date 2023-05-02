@@ -78,8 +78,8 @@ class _LocationChannel {
   // can start the location request if it's the first subscription or update ongoing request with new params if needed
   Stream<LocationResult> locationUpdates(_LocationUpdatesRequest request) {
     // The stream that will be returned for the current updates request
-    StreamController<LocationResult> controller;
-    _LocationUpdatesSubscription subscription;
+    late StreamController<LocationResult> controller;
+    late _LocationUpdatesSubscription subscription;
 
     final StreamSubscription<LocationResult> updatesSubscription =
         _updatesStream.listen((LocationResult result) {

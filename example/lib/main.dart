@@ -27,20 +27,20 @@ class _MyAppState extends State<MyApp> {
         tabBar: new CupertinoTabBar(
           items: <BottomNavigationBarItem>[
             new BottomNavigationBarItem(
-              title: new Text('Current'),
-              icon: new Icon(Icons.location_on),
+              label:  'Current',
+              icon:  Icon(Icons.location_on),
             ),
-            new BottomNavigationBarItem(
-              title: new Text('Track'),
-              icon: new Icon(Icons.location_searching),
+             BottomNavigationBarItem(
+              label:  'Track',
+              icon:  Icon(Icons.location_searching),
             ),
-            new BottomNavigationBarItem(
-              title: new Text('Services'),
-              icon: new Icon(Icons.location_off),
+             BottomNavigationBarItem(
+              label:  'Services',
+              icon:  Icon(Icons.location_off),
             ),
-            new BottomNavigationBarItem(
-              title: new Text('Settings'),
-              icon: new Icon(Icons.settings_input_antenna),
+             BottomNavigationBarItem(
+              label:  'Settings',
+              icon:  Icon(Icons.settings_input_antenna),
             ),
           ],
         ),
@@ -57,9 +57,9 @@ class _MyAppState extends State<MyApp> {
                 default:
                   return new Container(
                     color: Colors.white,
-                    child: new Center(
-                      child: new FlatButton(
-                        color: Colors.blue,
+                    child: Center(
+                      child: ElevatedButton(
+                        // color: Colors.blue,
                         child: Text(
                           "Enable location services",
                           style: TextStyle(color: Colors.white),

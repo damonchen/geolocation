@@ -4,7 +4,7 @@
 part of geolocation;
 
 class Location {
-  Location._(this.latitude, this.longitude, this.altitude, this.isMocked);
+  Location(this.latitude, this.longitude, this.altitude, this.isMocked);
 
   /// Latitude in degrees
   final double latitude;
@@ -36,7 +36,7 @@ class Location {
 class LocationAccuracy {
   /// In case the common ground constants are not satisfactory, you can build a custom [LocationAccuracy]
   /// using specific platform values.
-  const LocationAccuracy({@required this.android, @required this.ios});
+  const LocationAccuracy({required this.android, required this.ios});
 
   final LocationPriorityAndroid android;
   final LocationAccuracyIOS ios;

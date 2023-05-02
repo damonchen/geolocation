@@ -13,25 +13,23 @@ enum LocationPriorityAndroid { noPower, low, balanced, high }
 /// Documentation: <https://developers.google.com/android/reference/com/google/android/gms/location/LocationRequest.html>
 class LocationOptionsAndroid {
   const LocationOptionsAndroid({
-    this.interval,
-    this.fastestInterval,
-    this.expirationTime,
-    this.expirationDuration,
-    this.maxWaitTime,
-    this.numUpdates,
+    this.interval = 0,
+    this.fastestInterval = 0,
+    this.expirationTime = 0,
+    this.expirationDuration = 0,
+    this.maxWaitTime = 0,
+    this.numUpdates = 0,
   });
 
   /// Default options for single (one-shot) location request
-  static const LocationOptionsAndroid defaultSingle =
-      const LocationOptionsAndroid(
+  static const LocationOptionsAndroid defaultSingle = const LocationOptionsAndroid(
     interval: 5000,
     fastestInterval: 2500,
     expirationDuration: 30000,
   );
 
   /// Default options for continuous location request
-  static const LocationOptionsAndroid defaultContinuous =
-      const LocationOptionsAndroid(
+  static const LocationOptionsAndroid defaultContinuous = const LocationOptionsAndroid(
     interval: 5000,
     fastestInterval: 2500,
   );
