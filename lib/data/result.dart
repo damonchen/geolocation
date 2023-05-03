@@ -45,7 +45,7 @@ class GeolocationResultError {
   );
 
   final GeolocationResultErrorType? type;
-  final String message;
+  final String? message;
   final dynamic additionalInfo;
 
   @override

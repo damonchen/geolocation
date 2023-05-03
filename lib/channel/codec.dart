@@ -84,7 +84,7 @@ class _JsonCodec {
     );
 
     if (json.containsKey('fatal') && json['fatal']) {
-      throw new GeolocationException(error.message);
+      throw new GeolocationException(error.message!);
     }
 
     return error;
